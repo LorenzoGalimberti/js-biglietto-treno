@@ -1,10 +1,19 @@
-
+// ------------------- VARIABILI -----------------
+    let prezzoKm=0.21;
+    const scontoUnder=0.2;
+    const scontoOver=0.4;
+    let categoriaBiglietto="Biglietto Standard";
+    let prezzoBiglietto=0;
+    const numeroCarrozza = Math.floor(Math.random() * 7) + 1;
+    const codiceCP = (Math.floor(Math.random() * 90000) + 10000).toString();
+    
+    
+    
 // ------------------ FUNZIONE ----------------
 function submitForm(event) {
     event.preventDefault();
 
-    // presa variabili
-    console.log("Il FORM FUNZIONA!");
+    
 
     let userName = document.getElementById("passengerName").value;
     
@@ -14,15 +23,7 @@ function submitForm(event) {
     const selectElement = document.querySelector('.form-select');
     const selectedOption = selectElement.value;
 
-    // dichiarazione variabili
-    let prezzoKm=0.21;
-    const scontoUnder=0.2;
-    const scontoOver=0.4;
-    let categoriaBiglietto="Biglietto Standard";
-    let prezzoBiglietto=0;
-    const numeroCarrozza = Math.floor(Math.random() * 7) + 1;
-    const codiceCP = (Math.floor(Math.random() * 90000) + 10000).toString();
-    console.log(codiceCP);
+
 
 
     // logica
@@ -51,5 +52,20 @@ function submitForm(event) {
     document.getElementById('carrozzaOutput').innerHTML=numeroCarrozza;
     document.getElementById('codiceCPOutput').innerHTML=codiceCP;
     document.getElementById('priceOutput').prepend(prezzoBiglietto);
+
+
+    // MOSTRARE IL BIGLIETTO
+
+    let ticketElement=document.getElementById("bigliettoId");
+    let annullaButton=document.getElementById("annullaButtonId");
+    ticketElement.classList.remove('d-none');
+    annullaButton.classList.remove('d-none');
+    //
     
+}
+
+
+
+function refreshPage() {
+  window.location.reload();
 }
