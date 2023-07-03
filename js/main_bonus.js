@@ -20,11 +20,13 @@ function submitForm(event) {
     const scontoOver=0.4;
     let categoriaBiglietto="Biglietto Standard";
     let prezzoBiglietto=0;
-    console.log(selectedOption);
+    const numeroCarrozza = Math.floor(Math.random() * 7) + 1;
+    const codiceCP = (Math.floor(Math.random() * 90000) + 10000).toString();
+    console.log(codiceCP);
 
 
     // logica
-    
+
     if(selectedOption=='standard'){
         prezzoBiglietto=(prezzoKm*passengerKilometers).toFixed(2);
     } else if(selectedOption=='maggiore65'){
@@ -40,6 +42,14 @@ function submitForm(event) {
         prezzoBiglietto=(prezzoKm*passengerKilometers).toFixed(2);
 
     }
-    console.log(prezzoBiglietto)
+    console.log(prezzoBiglietto);
+    console.log(categoriaBiglietto);
+
+    //INSERIMENTO DEI VALORI TROVATI
+    document.getElementById('nameOutput').innerHTML=userName;
+    document.getElementById('ticketTypeOutput').innerHTML=categoriaBiglietto;
+    document.getElementById('carrozzaOutput').innerHTML=numeroCarrozza;
+    document.getElementById('codiceCPOutput').innerHTML=codiceCP;
+    document.getElementById('priceOutput').prepend(prezzoBiglietto);
     
 }

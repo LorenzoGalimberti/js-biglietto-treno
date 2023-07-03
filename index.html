@@ -9,12 +9,15 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <style>
-        .form-control:focus ,.form-select:focus{
+        
+        .form-control:focus,
+        .form-select:focus {
             border-color: red;
             box-shadow: none;
             -webkit-box-shadow: none;
         }
-/* 
+       
+        /* 
         .has-error .form-control:focus {
             box-shadow: none;
             -webkit-box-shadow: none;
@@ -33,7 +36,7 @@
                 <form class="row" onsubmit="submitForm(event)">
                     <div class="mb-3 col-4">
                         <label for="passengerName" class="form-label text-danger">Nome Passeggero</label>
-                        <input  type="text" class="form-control" id="passengerName">
+                        <input type="text" class="form-control" id="passengerName">
 
                     </div>
                     <div class="mb-3 col-4">
@@ -41,13 +44,13 @@
                         <input type="number" class="form-control" id="passengerKm">
                     </div>
                     <div class="mb-3 col-4">
-                        <label  class="form-label text-danger">Fascia d' età</label>
+                        <label class="form-label text-danger">Fascia d' età</label>
                         <select class="form-select" aria-label="Default select example">
-                            <option selected  value="standard">tra i 18 e 65 anni</option>
+                            <option selected value="standard">tra i 18 e 65 anni</option>
                             <option value="maggiore65">maggiore 65 anni</option>
                             <option value="minore18"> minore 18 anni</option>
-                            
-                          </select>
+
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -55,10 +58,41 @@
 
             </div>
         </div>
-        <div class="row">
-            <div class="col-8 bg-light p-3 m-5 mx-auto d-none">
-                prezzo biglietto
+        <div class="row ">
+            <div class="col-12 text-white mx-auto">
+                <h4 class="text-center">IL TUO BIGLIETTO</h4>
             </div>
+            <div class="container col-8 bg-light p-3 border border-top" id="test">
+                <div>
+                    <h6>DETTAGLI PASSENGERO </h6>
+                </div>
+                <div class="container border-top border-bottom ">
+                    <div class="row">
+                        <div class="col-4 bg-secondary py-2">
+                            <p class="fw-bold fs-6">NOME PASSENGERO <br><span id="nameOutput"></span></p>
+                        </div>
+                        <div class="col-2 py-2">
+                            <p class="fw-bold">Offerte</p>
+                            <p id="ticketTypeOutput"> </p>
+                        </div>
+                        <div class="col-2 py-2">
+                            <p class="fw-bold">Carrozza</p>
+                            <p id="carrozzaOutput"></p>
+                        </div>
+                        <div class="col-2 py-2">
+                            <p class="fw-bold">Codice CP</p>
+                            <p id="codiceCPOutput"></p>
+                        </div>
+                        <div class="col-2 py-2">
+                            <p class="fw-bold">Prezzo </p>
+                            <p id="priceOutput">€</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+
         </div>
     </div>
 
