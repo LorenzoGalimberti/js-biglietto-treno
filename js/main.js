@@ -9,7 +9,46 @@
 
 
 // 1) DICHIARARE INSERIRE A PROMPRT I DATI DELL' UTENTE e variabili utili 
-
+    let etaPasseggero=parseInt(prompt("inserisci la tua età:"));
+    let numeroKm=parseInt(prompt("inserisci il numero di kilometri da percorrere:"));
+    let prezzoKm=0.21;
+    const scontoUnder=0.2;
+    const scontoOver=0.4;
+    let categoriaBiglietto="Biglietto Standard";
+    let prezzoBiglietto=0;
+    console.log(etaPasseggero)
+    console.log(numeroKm)
 // 2) ASSEGNAZIONE CATEGORIA
-// 3) CONDIZIONI PER VEDERE SE APPLICARE UNO SCONTO 
-// 4) STAMPARE L' ELEMENTO A CONSOLE 
+    if (etaPasseggero>65){
+        categoriaBiglietto="Biglietto Ridotto";
+        prezzoKm=prezzoKm*(1-scontoOver);
+        prezzoBiglietto=(prezzoKm*numeroKm).toFixed(2);
+
+    }else if(etaPasseggero<18){
+        categoriaBiglietto="Biglietto Ridotto";
+        prezzoKm=prezzoKm*(1-scontoUnder);
+        prezzoBiglietto=(prezzoKm*numeroKm).toFixed(2);
+       
+    } else{
+        prezzoBiglietto=(prezzoKm*numeroKm).toFixed(2);
+        
+    }
+
+// 3) STAMPARE L' ELEMENTO A CONSOLE 
+    console.log(`
+    ----- Informazioni del  passeggero----------
+
+        Età: ${etaPasseggero} 
+
+        Kilometri da percorrere: ${numeroKm} km
+
+        tipo di biglietto : ${categoriaBiglietto}
+
+        prezzo totale: ${prezzoBiglietto}€
+    -------------------------------------------------
+    `);
+
+// 4) INSERIRE IL CONTENUTO NEL P
+
+const element=document.getElementById("ticketPrice");
+element.innerHTML=prezzoBiglietto
