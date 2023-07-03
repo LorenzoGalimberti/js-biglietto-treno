@@ -1,0 +1,6 @@
+.form-control:focus,
+.form-select:focus {
+    border-color: red;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
